@@ -41,13 +41,13 @@ then
 		echo $curDate $timestamp " Current IP address: " $OLD_IP >> $LOG
 	else
 		#Define the email address by changing youremail@youremail.com
-		echo -e "Subject: New IP Assignment \n\n " $curDate $timestamp "New IP address:" $NEW_IP | sendmail -v willwinklerdesign@gmail.com
+		echo -e "Subject: New IP Assignment \n\n " $curDate $timestamp "New IP address:" $NEW_IP | sendmail -v youremail@gmail.com
 		echo $NEW_IP > $CHECK_OLD_IP
 		echo $curDate $timestamp " IP address changed from: " $OLD_IP " To: " $NEW_IP >> $LOG
 	fi
 else
 	#If their is no previous IP then this will create the file and kick off an email 
 	echo $NEW_IP > $CHECK_OLD_IP
-	echo -e "Subject: New IP Assignment \n\n " $curDate $timestamp "New IP address:" $NEW_IP | sendmail -v willwinklerdesign@gmail.com
+	echo -e "Subject: New IP Assignment \n\n " $curDate $timestamp "New IP address:" $NEW_IP | sendmail -v youremail@gmail.com
 	echo $curDate $timestamp " New IP address: " $NEW_IP >> $LOG
 fi
